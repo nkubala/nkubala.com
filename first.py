@@ -21,7 +21,8 @@ def index(name=None):
 #redirect test
 @app.route('/test/')
 def test():
-	return redirect(url_for('index'))
+	# return redirect(url_for('index'))
+	return render_template('test.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
