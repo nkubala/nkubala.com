@@ -1,0 +1,3 @@
+#http://flask.pocoo.org/docs/quickstart/
+
+#http://flask.pocoo.org/docs/deploying/
