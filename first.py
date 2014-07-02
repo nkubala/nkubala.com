@@ -1,9 +1,4 @@
-from flask import Flask
-from flask import render_template
-from flask import url_for
-from flask import redirect
-from flask import make_response
-from flask import session
+from flask import Flask, render_template, url_for, redirect, make_response, session
 
 app = Flask(__name__)
 
@@ -17,6 +12,10 @@ def index(name=None):
 	if 'username' in session:
 		return 'Logged in as %s' % escape(session['username'])
 	return render_template('index.html', name=name)
+
+@app.route('/testlate/')
+def testlate(name=None):
+	return render_template('first_template.html', name=name)
 
 #redirect test
 @app.route('/test/')
