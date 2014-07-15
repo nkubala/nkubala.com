@@ -1,7 +1,15 @@
-<!doctype html>
-<title>Hello from Flask</title>
-{% if name %}
-  <h1>Hello {{ name }}!</h1>
-{% else %}
-  <h1>Hello World!</h1>
-{% endif %}
+<html>
+	<head>
+		{% if title %}
+	    <title>{{title}} - microblog</title>
+	    {% else %}
+	    <title>Welcome to microblog</title>
+	    {% endif %}
+	</head>
+	<body>
+		<h1>Hello, {{user.nickname}}!</h1>
+		{% for post in posts %}
+		<p>{{post.author.nickname}}, age {{post.author.age}}, says: <b>{{post.body}}</b></p>
+		{% endfor %}
+	</body>
+</html>
